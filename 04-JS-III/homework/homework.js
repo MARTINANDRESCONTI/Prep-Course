@@ -141,17 +141,14 @@ function multiplicarArgumentos() {
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
-  var contenedor = [];
-    for (var i = 0; i < arreglo.length; i++){
-    if (arreglo[i] > 18){
-      contenedor.push(arreglo[i]);
-      }
-    } return contenedor;
-  
+  var contador = 0
+  for (let i = 0; i < arreglo.length; i++) {
+    if (arreglo[i]> 18){
+   contador += 1;    
   }
+} return contador
+}
 
-
-  
 
 
 function diaDeLaSemana(numeroDeDia) {
@@ -176,9 +173,11 @@ function empiezaConNueve(n) {
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
   var numerostring = n.toString();
-  if (numerostrig[0] === "9"){
+  if (numerostring[0] === "9"){
     return true;
-  } return false;
+  }else {
+    return false;
+  }
     
   
 }
@@ -204,27 +203,19 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-var algunosmeses = [];
-for (var i = 0 ; i < array.length ; i++ ){
-  if (array[i] !== "Enero" || array[i] !== "Marzo" || array[i] !== "Noviembre"){
-    return "No se encontraron los meses pedidos";
-  } else if (array[i] === "Enero" || array[i] === "Marzo" || array[i] === "Noviembre"){
-    return algunosmeses.push(array[i]);
-  }return algunosmeses;
+  var meses = []
+  for (let i = 0; i < array.length; i++) {
+    if (array [i] === 'Enero' || array [i] === 'Marzo' || array [i] === 'Noviembre'){
+      meses.push (array [i]);
+    }
+  } 
+  if (meses.length< 3){
+    return 'No se encontraron los meses pedidos'
+  } else {
+    return meses;
+  }
 }
-//var arrayResultado = [];
-//for (var i = 0 ; i < array.length ; i++ ){
-// if (array[i] === "Enero" || array[i] === "Marzo" || array[i] === "Noviembre"){
-//  return arrayResultado.push(array[i]);
-//  }
-//}
-//if (arrayResultado.length === 3) {
-//  return arrayResultado;
-//} else {
-//  return "No se encontraron los meses pedidos";
-//  }
-  
-}
+
 
 
 function mayorACien(array) {
@@ -260,7 +251,7 @@ function breakStatement(numero) {
       }
     }
     if (arrayNuevo.length < 10){
-      return "Se interrumpió la ejecusión";
+      return "Se interrumpió la ejecución";
     }else if (arrayNuevo.length === 10){
       return arrayNuevo;
     }
